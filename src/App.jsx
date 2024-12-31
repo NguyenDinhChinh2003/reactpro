@@ -3,6 +3,8 @@ import Hello from "./components/hello";
 import Fruits from "./components/fruits";
 import ConditionalComponent from "./components/ConditionalComponent";
 import Message from "./components/Message";
+import Header from "./components/template/Header";
+
 function App() {
   const person = {
       name: "Xuan Son",
@@ -16,7 +18,8 @@ function App() {
       {/* <Hello person={person}></Hello> */}
       {/* <Fruits></Fruits> */}
       {/* <ConditionalComponent></ConditionalComponent> */}
-      <Message />
+      {/* <Message /> */}
+      <Header />
     </div>
   );
 }
