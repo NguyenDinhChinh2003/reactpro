@@ -6,20 +6,14 @@ import Message from "./components/Message";
 import Header from "./components/template/Header";
 
 function App() {
-  const person = {
-      name: "Xuan Son",
-      message: "goalll",
-      emjoi: "clap",
-      seatNumber: [1,2,4]
-    }
   return (
     
     <div className="App">
       {/* <Hello person={person}></Hello> */}
       {/* <Fruits></Fruits> */}
       {/* <ConditionalComponent></ConditionalComponent> */}
-      {/* <Message /> */}
       <Header />
+      <Message />
     </div>
   );
 }
