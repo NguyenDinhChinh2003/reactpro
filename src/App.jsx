@@ -4,6 +4,7 @@ import Fruits from "./components/fruits";
 import ConditionalComponent from "./components/ConditionalComponent";
 import Message from "./components/Message";
 import Header from "./components/template/Header";
+import TodolistComponents from "./components/TodolistComponents";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       {/* <ConditionalComponent></ConditionalComponent> */}
       <Header />
       <Message />
+      <TodolistComponents />
     </div>
   );
 }

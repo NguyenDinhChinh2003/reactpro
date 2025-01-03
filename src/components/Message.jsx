@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import Image from './Image';
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
@@ -30,18 +30,21 @@ function ProductCategoryRow({ category }) {
 }
 
 function ProductRow({ product }) {
-  const name = product.stocked ? product.name :
+  const name = product.stocked ? product.name : (
     <span style={{ color: 'red' }}>
       {product.name}
-    </span>;
+    </span>
+  );
 
   return (
     <tr>
       <td>{name}</td>
       <td>{product.price}</td>
+      <td><Image src={product.image} alt={product.alt} /></td>
     </tr>
   );
 }
+
 
 function ProductTable({ products, filterText, inStockOnly }) {
   const rows = [];
@@ -111,12 +114,12 @@ function SearchBar({
 }
 
 const PRODUCTS = [
-  {category: "Fruits", price: "$1", stocked: true, name: "Apple"},
-  {category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit"},
-  {category: "Fruits", price: "$2", stocked: false, name: "Passionfruit"},
-  {category: "Vegetables", price: "$2", stocked: true, name: "Spinach"},
-  {category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin"},
-  {category: "Vegetables", price: "$1", stocked: true, name: "Peas"}
+  {category: "Fruits", price: "$1", stocked: true, name: "Apple", image: "https://i.imgur.com/MK3eW3Am.jpg", alt: "Katherine "},
+  {category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit", image: "https://i.imgur.com/MK3eW3Am.jpg", alt: "Katherine Johnson"},
+  {category: "Fruits", price: "$2", stocked: false, name: "Passionfruit", image: "https://i.imgur.com/QIrZWGIs.jpg", alt: "Alan L. Hart"},
+  {category: "Vegetables", price: "$2", stocked: true, name: "Spinach", image: "https://i.imgur.com/MK3eW3Am.jpg", alt: "Katherine Johnson"},
+  {category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin", image: "https://i.imgur.com/QIrZWGIs.jpg", alt: "Alan L. Hart"},
+  {category: "Vegetables", price: "$1", stocked: true, name: "Peas", image: "https://i.imgur.com/MK3eW3Am.jpg", alt: "Katherine John"}
 ];
 
 export default function App() {
